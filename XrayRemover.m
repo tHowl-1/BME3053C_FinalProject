@@ -1,6 +1,7 @@
 function Clean = XrayRemover(Imgn)
 Img=imread(Imgn);
 Img(1,:)=0;
+Img(:, 841:1024)=0;
 sum=0;
 binary_Img=Img>40;
 for j=189:1024
