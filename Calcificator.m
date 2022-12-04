@@ -1,11 +1,10 @@
 %Calcificator
-function [Calcifier]=Calcificator(Imgn);
-clc; clear;
+function [Calcific]=Calcificator(Imgn)
 Img=imread(Imgn);
 %g=borderRemove('cdd-313.jpg');
 %Use Thresholding to Removed Useless Regions of Breast
 I=Img;
-I(I<185)=0;
+I(I<180)=0;
 I(I>231)=0;
 %Edge Detection
  [~, threshold]=edge(I,'sobel');
@@ -28,5 +27,5 @@ Iclear=imclearborder(Ifill,4);
  %Removes the non-calcification binary blobs
  Ifinish = bwareafilt(Ifinal,[150 500]);
  %Displays Overlay of Calcification
- imshow(labeloverlay(Img,Ifinish,'Colormap','autumn'));
+ Calcific=labeloverlay(Img,Ifinish,'Colormap','autumn');
 end
