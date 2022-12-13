@@ -4,4 +4,4 @@ All the necessary components for running MATA image classification are included 
 
 To run this program, simply download the repository and open the /program/ folder in matlab as the current directory. 
 Run the mammoMATA.m script and follow the prompt to classify and view possible calcifications and tumor areas.
-Files used will need to be in the same directory, as in removed from any folders, as mammoMATA.m
+Image files used will need to be in the same directory, as in removed from any folders, as mammoMATA.m. They are in a folder called sample_images.
