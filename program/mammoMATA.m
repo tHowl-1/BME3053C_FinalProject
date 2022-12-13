@@ -26,3 +26,6 @@ rgb = cat(3, scaled, scaled, scaled);
 fprintf('This image is classified as: %s , with %.2f percent certainty', string(prediction), max(probability) * 100 );
 
 % Insert tumorator and calcificator here
+flippedImage = mammoFlip(gray);
+tumor = tumorator(flippedImage);
+imshow(tumor);
