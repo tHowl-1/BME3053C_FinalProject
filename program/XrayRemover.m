@@ -10,7 +10,7 @@
 %This code removes Xray tags/labels from the Xray so that it does not
 %interfere with Tumorator and Calcificator functions
 function Clean = XrayRemover(Imgn)
-Img=imread(Imgn);
+Img=Imgn;
 Img(1,:)=0;
 Img(:, 841:1024)=0;
 for j=189:340

@@ -12,9 +12,8 @@
 %non-macrocalcification, and for images with calcification in non-dense
 %regions.
 function [Calcific]=Calcificator(Imgn)
-Img=imread(Imgn);
 bord=border(Imgn);
-Cimg=borderRemove(Img,bord);
+Cimg=borderRemove(Imgn,bord);
 
 %Use Thresholding to Removed Useless Regions of Breast
 I=Cimg;
@@ -43,5 +42,5 @@ Iclear=imclearborder(Ifill,4);
  %Removes the non-calcification binary blobs
  Ifinish = bwareafilt(Ifinal,[50 500]);
  %Overlaps the Original and Finished binary image with calcification in Red
- Calcific=labeloverlay(Img,Ifinish,'Colormap','autumn');
+ Calcific=labeloverlay(Imgn,Ifinish,'Colormap','autumn');
 end

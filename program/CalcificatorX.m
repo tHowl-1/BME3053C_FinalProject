@@ -12,13 +12,10 @@
 % well with fatty breast Xray's.
 function [Calc]= CalcificatorX(Imgn)
 % Load the Xray image
-Img=imread(Imgn);
 %Identifies and removes border regions of breast and Xray label
 Img=XrayRemover(Imgn);
-bord=border(Imgn);
-Cimg=borderRemove(Img,bord);
 %Use Thresholding to Removed Useless Regions of Breast
-I=Cimg;
+I=Img;
 I(I<220)=0;
 %Edge Detection
 [~, thresh]=edge(I,'roberts');

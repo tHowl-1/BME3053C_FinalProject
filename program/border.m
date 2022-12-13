@@ -11,9 +11,8 @@
 %have bright regions that would interfere with Calcificator and Tumorator
 %functions.
 function [Bord]=border(imgn)
-img=imread(imgn);
 %brightens the entire breast and fills in holes in the breast image
-I=imsharpen(img,'Amount',50);
+I=imsharpen(imgn,'Amount',50);
 se90=strel('line', 6, 90);
 se0=strel('line', 6, 0);
 Idil=imdilate(I,[se90 se0]);
