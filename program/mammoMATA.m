@@ -31,8 +31,7 @@ subplot(2,1,1);
 if type=="MRI"
     bord=border(gray);
     border_remove=borderRemove(gray,bord);
-    flippedImage = mammoFlip(border_remove);
-    tumor = tumorator(flippedImage);
+    tumor = tumorator(border_remove);
     imshow(tumor);
     title("Possible Tumor regions in Blue");
 else
